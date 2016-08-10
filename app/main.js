@@ -1,5 +1,18 @@
 import React from "react"
 import {render} from "react-dom"
-import A from "./A.jsx"
+import HouseItem from "./HouseItem"
+import UserCenter from "./UserCenter"
+import Home from "./Home"
+import {Route,Router,browserHistory} from "react-router"
 
-render(<A />,document.getElementById('root'));
+render(
+  (
+    <Router history={browserHistory} >
+      <Route path='/' component={Home}>
+        <Route path='/house' component={ HouseItem } />
+        <Route path='/user' component={ UserCenter } />
+      </Route>
+    </Router>
+  )
+  ,document.getElementById('root')
+);
