@@ -5,14 +5,14 @@ import UserCenter from "./UserCenter"
 import Home from "./Home"
 import {Route,Router,browserHistory} from "react-router"
 
+
 render(
   (
-    <Router history={browserHistory} >
-      <Route path='/' component={Home}>
-        <Route path='/house' component={ HouseItem } />
-        <Route path='/user' component={ UserCenter } />
-      </Route>
-    </Router>
-  )
-  ,document.getElementById('root')
+    // <Router history={browserHistory} >
+    //   <Route path='/' component={Home} />
+    //   <Route path='house' component={ HouseItem } />
+    //   <Route path='user' component={ UserCenter } />
+    // </Router>
+    <Home />
+  ),document.getElementById('root')
 );

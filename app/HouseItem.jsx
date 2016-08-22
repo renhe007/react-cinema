@@ -11,6 +11,6 @@ export default class HouseItem extends React.Component{
 
   }
   render(){
-    return (<div>item</div>)
+    return (<div>{this.props.fath.a}+++++{this.props.fath.b}</div>)
   }
 }

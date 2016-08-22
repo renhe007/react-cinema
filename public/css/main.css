@@ -1,0 +1,14 @@
+.topicType{
+/*padding-left: 1%;*/
+overflow: hidden;
+}
+.topicType li{
+  float:left;
+  width:16%;
+  height:20px;
+  line-height: 20px;
+  border:1px solid red;
+  margin:0 1%;
+  display:block;
+  text-align: center;
+}
