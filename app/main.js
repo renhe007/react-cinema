@@ -1,10 +1,13 @@
 import React from "react";
 import {render} from "react-dom";
 import {Route,Router,browserHistory} from "react-router";
-import route "../config/router";
+import route from "../config/router";
 
 
 render(
-  {route}
+  <div>
+    {route}
+  </div>
+
   ,document.getElementById('root')
 );

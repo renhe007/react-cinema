@@ -1,22 +1,25 @@
 import React from "react"
-import HouseItem from "./HouseItem"
 import { Link } from 'react-router'
 import $ from 'jquery'
 import Topic from "../utils//topic"
+import TopicItem from "./TopicItem.jsx"
+
 export default class Home extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      l:null,
+      list:[],
       send:null,
-      currentPage:1
+      currentPage:1,
+      topicType:""
     }
   }
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.scroll.bind(this));
+  }
   componentDidMount(){
-    $.get('/api/v1/topics',{page:this.state.currentPage,limit:10},(result) => {
-      console.log(result)
-      this.setState({l:result});
-    })
+    window.addEventListener('scroll', this.scroll.bind(this));
+    this.load(this.state.topicType,this.state.currentPage,false)
     // $.post("/api/v1/topics",
     //   {
     //     accesstoken: "7b3f6a37-92a6-47c6-9699-ec2556ffdfef",
@@ -29,13 +32,35 @@ export default class Home extends React.Component{
     //   }
     // )
   }
-  load(""){}
+  load(type,page,loadNextPage){
+    console.log("load     "+page+"    "+type+"   1"+loadNextPage)
+    $.get('/api/v1/topics',{page:page,limit:10,tab:type},(result) => {
+      console.log(result);
+      if(result.success){
+        if(loadNextPage === true){
+          this.setState({list:this.state.list.concat(result.data),topicType:type,currentPage:page})
+        } else{
+          this.setState({list:result.data,topicType:type,currentPage:page});
+        }
+      }
+      else {
+        alert("加载失败");
+      }
+    })
+  }
+  scroll(){
+    var a = document.getElementById("loadNextPage").offsetTop;
+    if (a >= $(window).scrollTop() && a < ($(window).scrollTop()+$(window).height())) {
+      this.load(this.state.topicType,this.state.currentPage+1,true)
+      // this.setState({currentPage:this.state.currentPage++})
+    }
+  }
   render(){
     let send = null;
-    let l = null;
-    if(this.state.l){
-      l = this.state.l.data.map((res)=>{
-        return  <div key={res.id}>{Topic.getContent(res.title,16)}</div>
+    let list = [];
+    if(this.state.list != []){
+      this.state.list.forEach((res,i)=>{
+        list.push(<TopicItem key={res.id+i} {...res} />);
       })
     }
     if(this.state.send){
@@ -44,16 +69,16 @@ export default class Home extends React.Component{
     return (
       <div>
         <header>
-          <ul className='topicType'>
-            <li onclick={}>全部</li>
-            <li>精华</li>
-            <li>分享</li>
-            <li>问答</li>
-            <li>招聘</li>
+          <ul className='homeHeader'>
+            <li onClick={this.load.bind(this,"",1)}>全部</li>
+            <li onClick={this.load.bind(this,"good",1)}>精华</li>
+            <li onClick={this.load.bind(this,"share",1)}>分享</li>
+            <li onClick={this.load.bind(this,"ask",1)}>问答</li>
+            <li onClick={this.load.bind(this,"job",1,"false")}>招聘</li>
           </ul>
         </header>
-        <div>{l}</div>
-        <div>{send}</div>
+        <div>{list}</div>
+        <div className='loadNextPage' ref='loadNextPage' id='loadNextPage'>load...</div>
       </div>
     )
   }

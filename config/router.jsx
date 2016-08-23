@@ -1,11 +1,11 @@
 import React from "react"
-import {render} from "react-dom"
-import HouseItem from "../app/HouseItem"
+import TopicItem from "../app/TopicItem"
 import UserCenter from "../app/UserCenter"
+import TopicDetail from "../app/TopicDetail"
 import Home from "../app/Home"
-import {Route,Router,browserHistory} from "react-router"
+import {Route,Router,browserHistory,IndexRoute} from "react-router"
 
-class root extends React.Component{
+ class Root extends React.Component{
   render(){
     return (
       <div>
@@ -14,10 +14,12 @@ class root extends React.Component{
     )
   }
 }
-const RouteConfig = (
+let RouteConfig = (
   <Router history={browserHistory}>
-    <IndexRoute path='/' component='{Home}' />
-    <Route path"topic:id" component={TopicDetail} />
+    <Route path='/build/' component={ Root }>
+      <IndexRoute  component={ Home } />
+      <Route path="topic/:id" component={ TopicDetail } />
+    </Route>
   </Router>
-)
-export default  RouteConfig 
+);
+export default RouteConfig;

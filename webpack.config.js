@@ -22,6 +22,6 @@ module.exports = {
     extensions:['','.js','.jsx']
   },
   devServer:{
-        contentBase:'./build/'
+        contentBase:path.join(__dirname,'build')
     }
 };
