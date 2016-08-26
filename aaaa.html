@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id='aa'>
+  <script>
+    var a = document.getElementById('aa')
+    a.onchange = function(){
+      var reg=new RegExp(/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/);
+      console.log(a.value);
+      if(!reg.test(a.value)){
+        console.log("not pass");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -55,6 +55,9 @@ export default class Home extends React.Component{
       // this.setState({currentPage:this.state.currentPage++})
     }
   }
+  change(){
+    console.log(this.refs.test.getDOMNode().value)
+  }
   render(){
     let send = null;
     let list = [];
@@ -68,6 +71,7 @@ export default class Home extends React.Component{
     }
     return (
       <div>
+        <input id='test' value={this.state.val} ref='test' />
         <header>
           <ul className='homeHeader'>
             <li onClick={this.load.bind(this,"",1)}>全部</li>

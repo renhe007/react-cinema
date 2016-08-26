@@ -18,7 +18,7 @@ let RouteConfig = (
   <Router history={browserHistory}>
     <Route path='/build/' component={ Root }>
       <IndexRoute  component={ Home } />
-      <Route path="topic/:id" component={ TopicDetail } />
+      <Route path="/topic/:id" component={ TopicDetail } />
     </Route>
   </Router>
 );

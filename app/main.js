@@ -8,6 +8,5 @@ render(
   <div>
     {route}
   </div>
-
   ,document.getElementById('root')
 );

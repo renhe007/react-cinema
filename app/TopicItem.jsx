@@ -32,13 +32,11 @@ export default class TopicItem extends React.Component{
     }
   }
   render(){
-    let id = this.props.id
-    console.log(Link)
     return (
       <div className='topicItem' >
         <img src={this.props.author.avatar_url} />
         <span className='topicType'>{this.type(this.props.tab)}</span>
-        <Link style={{textDecoration:'none',color:'black'}} to={`topic/${id}`}><p>{this.props.title}</p></Link>
+        <Link style={{textDecoration:'none',color:'black'}} to={`/topic/${this.props.id}`}><p>{this.props.title}</p></Link>
       </div>
     )
   }
