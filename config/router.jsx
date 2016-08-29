@@ -3,6 +3,7 @@ import TopicItem from "../app/TopicItem"
 import UserCenter from "../app/UserCenter"
 import TopicDetail from "../app/TopicDetail"
 import Home from "../app/Home"
+import Reply from "../app/Reply"
 import {Route,Router,browserHistory,IndexRoute} from "react-router"
 
  class Root extends React.Component{

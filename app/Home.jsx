@@ -34,7 +34,7 @@ export default class Home extends React.Component{
   }
   load(type,page,loadNextPage){
     console.log("load     "+page+"    "+type+"   1"+loadNextPage)
-    $.get('/api/v1/topics',{page:page,limit:10,tab:type},(result) => {
+    $.get('/api/v1/topics',{page:page,limit:20,tab:type},(result) => {
       console.log(result);
       if(result.success){
         if(loadNextPage === true){
@@ -71,8 +71,7 @@ export default class Home extends React.Component{
     }
     return (
       <div>
-        <input id='test' value={this.state.val} ref='test' />
-        <header>
+        <header className='header'>
           <ul className='homeHeader'>
             <li onClick={this.load.bind(this,"",1)}>全部</li>
             <li onClick={this.load.bind(this,"good",1)}>精华</li>
