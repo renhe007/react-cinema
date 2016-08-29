@@ -17,7 +17,7 @@ import {Route,Router,browserHistory,IndexRoute} from "react-router"
 }
 let RouteConfig = (
   <Router history={browserHistory}>
-    <Route path='/build/' component={ Root }>
+    <Route path='/' component={ Root }>
       <IndexRoute  component={ Home } />
       <Route path="/topic/:id" component={ TopicDetail } />
     </Route>

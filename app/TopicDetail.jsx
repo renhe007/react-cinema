@@ -51,7 +51,7 @@ export default class TopicDetail extends React.Component{
         </div>
         <h3 className="titleBackground">{detail ? detail.title : ""}</h3>
         <div className='topicContent' dangerouslySetInnerHTML={createMarkup()}></div>
-        <div className='repleBackground'>{detail ? detail.reply_count : ""} 回复</div>
+        <div className='repleBackground'><span className='span1'>收 藏</span><span className='span2'>回 复</span></div>
         { replyList }
       </div>
     )

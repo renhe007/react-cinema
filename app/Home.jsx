@@ -82,6 +82,10 @@ export default class Home extends React.Component{
         </header>
         <div>{list}</div>
         <div className='loadNextPage' ref='loadNextPage' id='loadNextPage'>load...</div>
+        <footer className="footer">
+          <div>首页</div>
+          <div>我的</div>
+        </footer>
       </div>
     )
   }
