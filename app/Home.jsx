@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from 'react-router'
 import $ from 'jquery'
 import Topic from "../utils//topic"
-import TopicItem from "./TopicItem.jsx"
+import TopicItem from "./TopicItem"
 
 export default class Home extends React.Component{
   constructor(props){
@@ -82,10 +82,12 @@ export default class Home extends React.Component{
         </header>
         <div>{list}</div>
         <div className='loadNextPage' ref='loadNextPage' id='loadNextPage'>load...</div>
-        <footer className="footer">
-          <div>首页</div>
-          <div>我的</div>
-        </footer>
+        <footer className="footer" >
+          <Link to="/" ><i className='iconfont icon-home ' id='noLeftBorder'></i></Link>
+          <Link to="/publish" ><i className='iconfont icon-editorder'></i></Link>
+          <Link to="/userCenter"><i className='iconfont icon-my' ></i></Link>
+      </footer>
+
       </div>
     )
   }

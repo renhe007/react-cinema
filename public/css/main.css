@@ -114,7 +114,7 @@ display:inline-block;
 .visitCount{
   line-height: 25px;
 }
-.titleBackground ,{
+.titleBackground {
   background-color:#e5e5e5;
   padding:10px;
   margin-bottom: 10px;
@@ -175,10 +175,17 @@ display:inline-block;
   position: fixed;
   bottom: 0;
   color: white;
-  font-size: 18px;
+  font-size: 40px;
+  padding-left: 2px;
 }
-.footer div{
+.footer i{
+  color: white;
+  z-index: 100;
   float: left;
-  width: 48%;
+  width: 32%;
   line-height: 46px;
+  border-left: 2px solid white;
+}
+#noLeftBorder{
+  border-left: 2px solid #1d87bf;
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import $ from "jquery"
 import Reply from "./Reply"
+import { Link } from "react-router"
 
 export default class TopicDetail extends React.Component{
   constructor(props){
@@ -38,7 +39,7 @@ export default class TopicDetail extends React.Component{
     return (
       <div>
         <div className='back'>
-          <span>《 </span>
+          <Link to='/'><span className='iconfont icon-arrowleft'></span></Link>
           <h2>详情</h2>
         </div>
         <div className='auth'>

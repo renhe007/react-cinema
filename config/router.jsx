@@ -20,6 +20,8 @@ let RouteConfig = (
     <Route path='/' component={ Root }>
       <IndexRoute  component={ Home } />
       <Route path="/topic/:id" component={ TopicDetail } />
+      <Route path="/userCenter" component={ UserCenter } />
+      <Route path="/publish" component={ UserCenter } />
     </Route>
   </Router>
 );
