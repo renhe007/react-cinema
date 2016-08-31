@@ -16,34 +16,73 @@
     }
     #cc{
       position: absolute;
-  width: 100px;
-  background: none;
-  margin: 0 auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: red;
+      width: 100px;
+      background: none;
+      margin: 0 auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: red;
+    }
+    #dd{
+      background-color: red;
+      margin-left:80px;
+        margin-right:80px;
+      height:200px;
+      width:40px;
+      float: left;
+    }
+    #ee{
+      background-color: yellow;
+    }
+    #ff{
+      border:1px solid red;
+      width:100%;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <input type="text" >
-  <div id='aa'>
-    111
-  <div id="bb">ertertetertertetr</div>
+<div id='ff'>
+  <div id='dd'></div>
+  <div id='ee'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae hic ut ab perferendis sit quod architecto, dolor debitis quam rem provident aspernatur tempora expedita perspiciatis suscipit ipsam voluptas tenetur. Nostrum? Quae hic ut ab perferendis sit quod architecto. Quae hic ut ab perferendis sit quod architecto.</div>
 </div>
-<div>222</div>
-<div>333</div>
-<div>4</div>
-<div>5</div>
-<div>6</div>
- <i>first</i>
- <div id='cc'></div>
+
   <script>
-  var a = [4,6,7,8]
-  console.log(a)
-    console.log(document.querySelectorAll("div"));
+  var func = (function(a) {
+      this.a = a;
+      return function(a) {
+          a += this.a;
+          return a;
+      }
+  })(function(a, b) {
+      return a;
+  }(1, 2))
+
+  func(4) // ?
+  var x = 10,
+    foo = {
+        x: 20,
+        bar: function() {
+            var x = 30;
+            return this.x;
+        }
+    }
+
+console.log(foo.bar());
+console.log((foo.bar)());
+console.log((foo.bar = foo.bar)());
+console.log((foo.bar, foo.bar)());
+var s = {
+  say:function(name){
+    alert(name)
+  }
+}
+function aaa(name){
+  s.say.call(this,name)
+}
+aaa('we');
   </script>
 </body>
 </html>

@@ -15,8 +15,8 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-collected:before { content: "\e618"; }
-.icon-collect:before { content: "\e606"; }
+.icon-collected:before { content: "\e618"; font-size: 26px;line-height: 50px;}
+.icon-collect:before { content: "\e606"; font-size: 26px;line-height: 50px;}
 .icon-arrowleft:before { content: "\e612"; line-height: 50px;font-size: 30px;}
 .icon-home:before { content: "\e65b"; font-size: 30px;line-height: 46px;}
 .icon-listgrid:before { content: "\e65d"; }

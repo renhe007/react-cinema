@@ -49,6 +49,7 @@ export default class TopicDetail extends React.Component{
             <span>阅读：{detail ? detail.visit_count : ""}</span>
             <span>回复：{detail ? detail.reply_count : ""}</span>
           </div>
+          <div className="iconfont icon-collect" style={{float:right,marginRight:'20px'}}></div>
         </div>
         <h3 className="titleBackground">{detail ? detail.title : ""}</h3>
         <div className='topicContent' dangerouslySetInnerHTML={createMarkup()}></div>

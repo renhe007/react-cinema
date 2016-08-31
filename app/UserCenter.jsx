@@ -29,6 +29,7 @@ export default class UserCenter extends React.Component{
     }
     return (
       <div>
+        收藏
         {collect}
       </div>)
   }
