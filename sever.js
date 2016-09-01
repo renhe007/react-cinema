@@ -12,7 +12,9 @@ var proxy = [{
 //启动服务
 var server = new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
-    proxy:proxy
+    proxy:proxy,
+    historyApiFallback: true,
+    hot: true
 });
 
 //将其他路由，全部返回index.html

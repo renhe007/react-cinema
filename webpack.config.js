@@ -1,23 +1,30 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname, './app/main.js'),
+  entry: [
+   'webpack-dev-server/client?http://localhost:4000',
+   'webpack/hot/only-dev-server',
+   path.resolve(__dirname, './app/main.js')
+ ],
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'bundle.js',
+    publicPath: "http://localhost:4000/build/" 
   },
   module: {
     loaders: [
       {
         test: /.jsx?$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
+        loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
       }
     ]
   },
+  devtool: 'source-map',
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   resolve:{
     extensions:['','.js','.jsx']
   },
