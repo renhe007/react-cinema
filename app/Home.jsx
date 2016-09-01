@@ -1,24 +1,24 @@
 import React from "react"
 import { Link } from 'react-router'
 import $ from 'jquery'
-import Topic from "../utils//topic"
 import TopicItem from "./TopicItem"
 
 export default class Home extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      list:[],
+            list:[],
       send:null,
       currentPage:1,
       topicType:""
     }
+    this.scroll = this.scroll.bind(this);
   }
   componentWillUnmount(){
-    window.removeEventListener('scroll', this.scroll.bind(this));
+    window.removeEventListener('scroll', this.scroll);
   }
   componentDidMount(){
-    window.addEventListener('scroll', this.scroll.bind(this));
+    window.addEventListener('scroll', this.scroll);
     this.load(this.state.topicType,this.state.currentPage,false)
     // $.post("/api/v1/topics",
     //   {
@@ -59,15 +59,11 @@ export default class Home extends React.Component{
     console.log(this.refs.test.getDOMNode().value)
   }
   render(){
-    let send = null;
     let list = [];
     if(this.state.list != []){
       this.state.list.forEach((res,i)=>{
         list.push(<TopicItem key={res.id+i} {...res} />);
       })
-    }
-    if(this.state.send){
-      send = this.state.send.topic_id;
     }
     return (
       <div>

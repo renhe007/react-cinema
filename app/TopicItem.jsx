@@ -1,5 +1,5 @@
 import React from "react"
-import {Route,Router,browserHistory,IndexRoute,Link} from "react-router"
+import { Link } from "react-router"
 
 export default class TopicItem extends React.Component{
   constructor(props){
@@ -12,24 +12,25 @@ export default class TopicItem extends React.Component{
 
   }
   type(type){
+    let returnType = "";
     switch (type) {
       case "share":
-        return "分享";
+        returnType = "分享";
         break;
       case "ask":
-        return "问答";
+        returnType = "问答";
         break;
       case "good":
-        return "精华";
+        returnType = "精华";
         break;
       case "job":
-        return "招聘";
+        returnType = "招聘";
         break;
       default:
-        return "神秘";
+        returnType = "神秘";
         break;
-
     }
+    return returnType;
   }
   render(){
     return (

@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'bundle.js',
-    publicPath: "http://localhost:4000/build/" 
+    publicPath: "http://localhost:4000/build/"
   },
   module: {
     loaders: [
@@ -18,6 +18,10 @@ module.exports = {
         test: /.jsx?$/,
         exclude: /node_modules/,
         loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
+      },
+      { 
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
       }
     ]
   },
