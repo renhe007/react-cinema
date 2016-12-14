@@ -1,6 +1,7 @@
 import React from "react"
 import  $ from "jquery"
 import TopicItem from "./TopicItem"
+import { Link } from "react-router"
 
 export default class UserCenter extends React.Component{
   constructor(props){
@@ -30,6 +31,8 @@ export default class UserCenter extends React.Component{
       <div>
         收藏
         {collect}
+        <Link to='/logform'>添加</Link>
+        {this.props.children}
       </div>)
   }
 }

@@ -5,12 +5,24 @@ export default class TopicItem extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-
+      state : this.props
     }
   }
-  componentDidMount(){
+
+  componentDidMount() {
 
   }
+
+  shouldComponentUpdate(nextProps) {
+    if(this.props.id !== nextProps.id){
+      // console.log(this.props)
+      // console.log(nextProps)
+      return true
+    } else{
+      return false
+    }
+  }
+
   type(type){
     let returnType = "";
     switch (type) {
@@ -33,11 +45,12 @@ export default class TopicItem extends React.Component{
     return returnType;
   }
   render(){
+    console.log(this.state.state.id )
     return (
       <div className='topicItem' >
-        <img src={this.props.author.avatar_url} />
-        <span className='topicType'>{this.type(this.props.tab)}</span>
-        <Link style={{textDecoration:'none',color:'black'}} to={`/topic/${this.props.id}`}><p>{this.props.title}</p></Link>
+        <img src={this.state.state.author.avatar_url} />
+        <span className='topicType'>{this.type(this.state.state.tab)}</span>
+        <Link style={{textDecoration:'none',color:'black'}} to={`/topic/${this.state.state.id}`}><p>{this.state.state.title}</p></Link>
       </div>
     )
   }

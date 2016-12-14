@@ -19,7 +19,7 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
       },
-      { 
+      {
         test: /\.css$/,
         loader: "style-loader!css-loader"
       }
@@ -33,6 +33,6 @@ module.exports = {
     extensions:['','.js','.jsx']
   },
   devServer:{
-        contentBase:path.join(__dirname,'build')
-    }
+    contentBase:path.join(__dirname,'build')
+  }
 };

@@ -7,7 +7,7 @@ export default class Home extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-            list:[],
+      list:[],
       send:null,
       currentPage:1,
       topicType:""
@@ -70,7 +70,7 @@ export default class Home extends React.Component{
         <header className='header'>
           <ul className='homeHeader'>
             <li onClick={this.load.bind(this,"",1)}>全部</li>
-            <li onClick={this.load.bind(this,"good",1)}>精haa</li>
+            <li onClick={this.load.bind(this,"good",1)}>精华</li>
             <li onClick={this.load.bind(this,"share",1)}>分享</li>
             <li onClick={this.load.bind(this,"ask",1)}>问答</li>
             <li onClick={this.load.bind(this,"job",1,"false")}>招聘</li>
@@ -78,11 +78,6 @@ export default class Home extends React.Component{
         </header>
         <div>{list}</div>
         <div className='loadNextPage' ref='loadNextPage' id='loadNextPage'>load...</div>
-        <footer className="footer" >
-          <Link to="/" ><i className='iconfont icon-home ' id='noLeftBorder'></i></Link>
-          <Link to="/publish" ><i className='iconfont icon-editorder'></i></Link>
-          <Link to="/userCenter"><i className='iconfont icon-my' ></i></Link>
-      </footer>
 
       </div>
     )
