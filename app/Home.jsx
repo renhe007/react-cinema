@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from 'react-router'
+// import { Link } from 'react-router'
 import $ from 'jquery'
 import TopicItem from "./TopicItem"
 
@@ -69,7 +69,7 @@ export default class Home extends React.Component{
       <div>
         <header className='header'>
           <ul className='homeHeader'>
-            <li onClick={this.load.bind(this,"",1)}>全部</li>
+            <li onClick={this.load.bind(this,"",1)}>全部2222</li>
             <li onClick={this.load.bind(this,"good",1)}>精华</li>
             <li onClick={this.load.bind(this,"share",1)}>分享</li>
             <li onClick={this.load.bind(this,"ask",1)}>问答</li>
