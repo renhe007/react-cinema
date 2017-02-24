@@ -85,10 +85,15 @@
   <input type='checkbox'>
 
   <script>
-  var str = ['gis']
-  for(var s of str){
-    str[s]
+  function sidEffecting(ary) {
+    ary[0] = ary[2];
   }
+  function bar(a,b,c=3) {  // c无赋值
+    c = 10
+    sidEffecting(arguments);
+    return a + b + c;
+  }
+  console.log(bar(1,1,1))
   // var substr = str.match(/{{(\S*)}}/)?
   // console.log(substr)
   </script>

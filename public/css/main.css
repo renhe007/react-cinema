@@ -26,6 +26,7 @@ display:inline-block;
   display:block;
   text-align: center;
   color: #949191;
+  cursor: pointer;
 }
 .topicItem{
   overflow: hidden;

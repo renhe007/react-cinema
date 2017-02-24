@@ -1,5 +1,5 @@
 {
-  "name": "react-cinema",
+  "name": "react-cnode",
   "version": "1.0.0",
   "description": "...",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/renhe007/react-cinema.git"
+    "url": "git+https://github.com/renhe007/react-cnode.git"
   },
   "author": "renhe",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/renhe007/react-cinema/issues"
+    "url": "https://github.com/renhe007/react-cnode/issues"
   },
-  "homepage": "https://github.com/renhe007/react-cinema#readme",
+  "homepage": "https://github.com/renhe007/react-cnode#readme",
   "dependencies": {
     "babel-loader": "^6.2.4",
     "jquery": "^3.1.0",

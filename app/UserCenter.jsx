@@ -12,7 +12,7 @@ export default class UserCenter extends React.Component{
     }
   }
   componentDidMount(){
-    $.get("/api/v1/topic_collect/renhe007",(res)=>{
+    $.get("/api/v1/topic_collect/renhe007",(res)=>{sjjsjjsj
       if(res.success){
         this.setState({collect:res.data})
       }else {
